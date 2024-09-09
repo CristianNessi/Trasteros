@@ -1,0 +1,510 @@
+/* Estilos Generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    background-color: #2c2c2c;
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+h1,
+h2,
+h3 {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+a {
+    color: #ff6b6b;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ff4757;
+}
+
+/* Encabezado */
+header {
+    background-color: #1c1c1c;
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: -webkit-sticky;
+    /* Para navegadores basados en Webkit */
+    position: sticky;
+    top: 0;
+    /* Fija el encabezado en la parte superior */
+    z-index: 1000;
+    /* Asegura que el encabezado esté por encima de otros contenidos */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 20px;
+    position: relative;
+}
+
+header nav ul li a {
+    font-size: 1rem;
+    color: #f5f5f5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+header nav ul li a:hover {
+    color: #ff6b6b;
+}
+
+/* Menú desplegable */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #f5f5f5;
+}
+
+.menu-toggle div {
+    background-color: #f5f5f5;
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+}
+
+/* Estilos para el menú móvil */
+#mobile-menu {
+    display: none;
+    /* Inicialmente oculto */
+    flex-direction: column;
+    background-color: #444;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+#mobile-menu.active {
+    display: flex;
+}
+
+#mobile-menu li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #555;
+}
+
+.menu-toggle.active {
+    color: white;
+}
+
+/* Mostrar menú móvil cuando se activa */
+.menu-toggle.active+#mobile-menu {
+    display: flex;
+}
+
+/* Estilo del botón de cerrar en el menú móvil */
+#close-menu {
+    background-color: #ff0000;
+    /* Rojo para llamar la atención */
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Sección de Presentación */
+section#about {
+    background-color: #3a3a3a;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+section#about p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 20px auto;
+    max-width: 750px;
+    color: #dcdcdc;
+}
+
+/* Sección de Trasteros */
+section#trasteros {
+    margin-top: 40px;
+}
+
+section#trasteros h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    color: #ff6b6b;
+}
+
+.trastero-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.trastero-item {
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    color: #f5f5f5;
+}
+
+.trastero-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+}
+
+.trastero-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.trastero-item h3 {
+    font-size: 1.6rem;
+    color: #ffa502;
+    margin-bottom: 15px;
+}
+
+.trastero-item p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #dcdcdc;
+}
+
+.trastero-item .precio {
+    font-size: 1.4rem;
+    color: #ff6b6b;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.trastero-item .capacidad {
+    font-size: 0.9rem;
+    color: #2ed573;
+    margin-bottom: 10px;
+}
+
+/* Botón de Comprar */
+.trastero-item button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 10px 0;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.trastero-item button:hover {
+    background-color: #ff4757;
+}
+
+/* Sección de Contacto */
+section#contact {
+    background-color: #3a3a3a;
+    color: #f5f5f5;
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 8px;
+    margin-top: 40px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+section#contact p {
+    font-size: 1.1rem;
+}
+
+section#contact a {
+    color: #ffa502;
+    font-weight: bold;
+    border-bottom: 2px solid #ffa502;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+section#contact a:hover {
+    color: #ff7f50;
+    border-color: #ff7f50;
+}
+
+/* Pie de página */
+footer {
+    background-color: #1c1c1c;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Estilo del Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #2c2c2c;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    color: white;
+}
+
+.modal-content h2 {
+    text-align: center;
+    color: #ffa502;
+}
+
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.modal-content ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+}
+
+.modal-content ul li span {
+    font-size: 1rem;
+}
+
+.modal-content #cart-total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff6b6b;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff6b6b;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#checkout-button {
+    background-color: #2ed573;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+#checkout-button:hover {
+    background-color: #20bf6b;
+}
+
+/* Modal de Pago */
+#payment-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 60px;
+}
+
+#payment-modal .modal-content {
+    background-color: #2c2c2c;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    color: white;
+}
+
+#payment-modal h2 {
+    text-align: center;
+    color: #ffa502;
+}
+
+#payment-modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#payment-modal label {
+    font-size: 1rem;
+    color: #dcdcdc;
+}
+
+#payment-modal input {
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #1c1c1c;
+    color: white;
+}
+
+#payment-modal button {
+    background-color: #2ed573;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+#payment-modal button:hover {
+    background-color: #20bf6b;
+}
+
+/* Botón de WhatsApp */
+#whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    /* Color verde de WhatsApp */
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#whatsapp-button img {
+    width: 60px;
+    /* Ajusta el tamaño del icono según lo necesites */
+    height: 60px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        background-color: #555;
+    }
+
+
+    header nav {
+        width: 100%;
+        position: relative;
+    }
+
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header nav ul.mobile-menu {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle.active+.mobile-menu {
+        display: flex;
+    }
+
+    .menu-toggle div {
+        background-color: #f5f5f5;
+    }
+
+    .modal-content {
+        margin-top: 150px;
+    }
+
+    #payment-modal .modal-content {
+        margin-top: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header nav ul li a {
+        font-size: 0.9rem;
+    }
+}
